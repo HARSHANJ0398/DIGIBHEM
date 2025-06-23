@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Showcase - Harsha N J</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      padding: 2rem;
+    }
+    .ktm-font {
+      font-family: 'Anton', sans-serif;
+      color: #ff6f00;
+    }
+    .resume-section {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .resume-section h1 {
+      font-size: 2.5rem;
+    }
+    .btn {
+      background-color: #ff6f00;
+      color: #121212;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      font-size: 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 1rem;
+      display: inline-block;
+    }
+    .projects, .skills, .certificates {
+      margin: 3rem 0;
+    }
+    .section-title {
+      color: #ff6f00;
+      margin-bottom: 1rem;
+      font-size: 1.75rem;
+    }
+    .project-gallery,
+    .certificate-gallery {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .project-card,
+    .certificate-card {
+      background-color: #1e1e1e;
+      padding: 1rem;
+      border-radius: 10px;
+      width: 250px;
+      text-align: center;
+    }
+    .project-card img,
+    .certificate-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    canvas {
+      max-width: 400px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="resume-section" data-aos="fade-down">
+    <h1 class="ktm-font">Portfolio Showcase</h1>
+    <p>Welcome to my creative corner where I highlight my best work and skills.</p>
+    <a class="btn" href="HARSHA (1).pdf" download>Download Resume</a>
+  </div>
+
+  <div class="projects" data-aos="fade-up">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-gallery">
+      <div class="project-card">
+        <img src="chat.png" alt="Project 1">
+        <h3>Chat App</h3>
+        <p>React, SQL, CSS</p>
+      </div>
+      <div class="project-card">
+        <img src="portfolio.png" alt="Project 2">
+        <h3>Portfolio Website</h3>
+        <p>HTML, CSS, JS</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="skills" data-aos="fade-up">
+    <h2 class="section-title">Skills Snapshot</h2>
+    <canvas id="skillChart"></canvas>
+  </div>
+
+  <div class="certificates" data-aos="fade-up">
+    <h2 class="section-title">Certificates</h2>
+    <div class="certificate-gallery">
+      <div class="certificate-card">
+        <img src="agile_scrum_master.png" alt="Certificate 1">
+        <p>Agile Scrum Master</p>
+      </div>
+      <div class="certificate-card">
+        <img src="csharp_comprehensive.png" alt="Certificate 2">
+        <p>c# comprehensive</p>
+      </div>
+      <div class="certificate-card">
+        <img src="intr0_to__devops_tools.png" alt="Certificate 3">
+        <p>Introduction to DevOps Tools</p>
+      </div>
+      <div class="certificate-card">
+        <img src="nptel.png" alt="Certificate 4">
+        <p>NPTEL- Big Data Computing</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AOS + Chart Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    const ctx = document.getElementById('skillChart');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['HTML', 'CSS', 'JavaScript', 'React', 'SQL', 'C', 'Java'],
+        datasets: [{
+          label: 'Skill Level',
+          data: [9, 8, 8, 7, 7, 6, 6],
+          backgroundColor: '#ff6f00'
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true, max: 10 }
+        },
+        plugins: {
+          legend: { display: false }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
